@@ -11,6 +11,8 @@
     <Compile Include="**\*.cs" Exclude="$(GlobalExclude)" />
     <EmbeddedResource Include="**\*.resx" Exclude="$(GlobalExclude)" />
     <Compile Remove="Controllers\Test.cs" />
+    <Compile Remove="Controllers\HomeController.cs" />
+    <Compile Remove="Controllers\TestController.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,10 +51,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Views\" />
-    <Folder Include="Views\Home\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Views\Home\Index.cshtml" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
