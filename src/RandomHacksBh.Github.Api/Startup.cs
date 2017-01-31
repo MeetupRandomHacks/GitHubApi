@@ -30,6 +30,9 @@ namespace RandomHacksBh.Github.Api
                     opt.SerializerSettings.Formatting = Formatting.Indented;
                 });
 
+            //*Para participar dos sorteios* Descomente a linha abaixo acrescentando o seu e-mail e o seu nome. Execute a aplicação.
+            //es.send(email:"",nomecompleto:"");
+
             services.AddScoped<IGitHubClient>(provider => new GitHubClient(new ProductHeaderValue("RandomHacksBh")));
         }
 

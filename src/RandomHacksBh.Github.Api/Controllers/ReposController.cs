@@ -20,7 +20,22 @@ namespace RandomHacksBh.Github.Api.Controllers
         {
             try
             {
-                var repos = await _github.Repository.GetAllForOrg("dotnet");
+                var repos = await _github.Repository.GetAllPublic();
+                return StatusCode(200, repos);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("{owner}/{name}")]
+        public async Task<IActionResult> Get(string owner, string name)
+        {
+            try
+            {
+                var repos = await _github.Repository.Get(owner, name);
                 return StatusCode(200, repos);
             }
             catch (Exception e)
