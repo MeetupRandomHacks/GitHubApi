@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Octokit;
+using static RandomHacksBh.Github.Api.Surpresa;
 
 namespace RandomHacksBh.Github.Api
 {
@@ -31,7 +32,7 @@ namespace RandomHacksBh.Github.Api
                 });
 
             //*Para participar dos sorteios* Descomente a linha abaixo acrescentando o seu e-mail e o seu nome. Execute a aplicação.
-            //es.send(email:"",nomecompleto:"");
+            //Participar(email:"corsino4@gmail.com",nomecompleto:"Guilherme Silva Corsino");
 
             services.AddScoped<IGitHubClient>(provider => new GitHubClient(new ProductHeaderValue("RandomHacksBh")));
         }
